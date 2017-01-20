@@ -1,0 +1,37 @@
+M590Drv	KEYWORD1
+M590Client	KEYWORD1
+
+begin	KEYWORD2
+
+ppp_connect	KEYWORD2
+readAllSMS	KEYWORD2
+readUnreadSMS 	KEYWORD2
+get_rssi	KEYWORD2
+
+sendSMS 	KEYWORD2
+sendUSSD	KEYWORD2
+tcp_connect 	KEYWORD2
+
+
+get_ip 	KEYWORD2
+
+
+get_imei	KEYWORD2
+
+
+connect2website KEYWORD2
+
+
+connect2server 	KEYWORD2
+
+tcp_write 	KEYWORD2
+
+
+tcp_close	KEYWORD2
+
+
+pwrdown	KEYWORD2
+
+
+imode	KEYWORD2
+
