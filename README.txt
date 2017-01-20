@@ -1,1 +1,1 @@
-This is an Arduino library for M590 GSM Modem.
+This is an Arduino TCP client library for M590 GPRS Modem.
