@@ -14,6 +14,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with The Arduino M590 library.  If not, see
 <http://www.gnu.org/licenses/>.
+
+Author: Brian Ejike
 --------------------------------------------------------------------*/
 
 #include <inttypes.h>
@@ -36,7 +38,7 @@ M590Client::M590Client(M590Drv * dev, uint8_t link) : _link(link), _modem(dev)
 ////////////////////////////////////////////////////////////////////////////////
 
 // the standard print method will call write for each character in the buffer
-// this is very slow on ESP
+// this is very slow
 size_t M590Client::print(const __FlashStringHelper *ifsh)
 {
 	printFSH(ifsh, false);

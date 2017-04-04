@@ -1,5 +1,22 @@
-/* This is a library for the M590E GSM Modem 
-Written by Brian Ejike*/
+/*--------------------------------------------------------------------
+This file is part of the Arduino M590 library.
+
+The Arduino M690 library is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+The Arduino M590 library is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with The Arduino M590 library.  If not, see
+<http://www.gnu.org/licenses/>.
+
+Author: Brian Ejike
+--------------------------------------------------------------------*/
 
 #include <Arduino.h>
 #include <avr/pgmspace.h>
@@ -13,9 +30,6 @@ Written by Brian Ejike*/
 #define vsnprintf_P  vsnprintf
 #endif
 
-//Stream * M590Drv::gsm;
-
-//Ring_Buffer M590Drv::ringBuf(36);
 
 const char * MODEM_TAGS[] = {
     "\r\nOK\r\n",
@@ -384,37 +398,6 @@ bool M590Drv::read_data(uint8_t *data, bool peek, uint8_t link, bool* conn_close
 				*data = gsm->read();
 				_buf_pos--;
 			}
-			//Serial.print((char)*data);
-            /*
-
-			if (_buf_pos == 0)
-			{
-				// after the data packet a ",CLOSED" string may be received
-				// this means that the socket is now closed
-
-				delay(5);
-
-				if (gsm->available())
-				{
-					//LOGDEBUG(".2");
-					//LOGDEBUG(espSerial->peek());
-
-					// 48 = '0'
-					if (gsm->peek()==48+connId)
-					{
-						int idx = readUntil(500, ",CLOSED\r\n", false);
-						if(idx!=NUMESPTAGS)
-						{
-							LOGERROR(F("Tag CLOSED not found"));
-						}
-
-						LOGDEBUG();
-						LOGDEBUG(F("Connection closed"));
-
-						*connClose=true;
-					}
-				}
-			}*/
 
 			return true;
 		}
@@ -635,21 +618,6 @@ int M590Drv::read_until(int timeout, const char* tag, bool findTags, bool emptyS
     return ret;
 }
 
-/*-
-int M590Drv::send_cmd(const __FlashStringHelper* cmd, int timeout){
-	LOGDEBUG(F("----------------------------------------------"));
-	LOGDEBUG1(F(">>"), cmd);
-
-	gsm->println(cmd);
-
-	int idx = read_until(timeout);
-
-	LOGDEBUG1(F("---------------------------------------------- >"), idx);
-	LOGDEBUG();
-
-    return idx; 
-}
-*/
 /*
 * Sends the AT command and returns the id of the TAG.
 * The additional arguments are formatted into the command using sprintf.

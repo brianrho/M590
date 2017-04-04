@@ -14,6 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with The Arduino M590 library.  If not, see
 <http://www.gnu.org/licenses/>.
+
 --------------------------------------------------------------------*/
 
 #ifndef ModemDebug_H
